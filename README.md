@@ -1,6 +1,6 @@
 # Android 快速开发（一），封装一个 TopBarBaseActivity
 
-介绍请点 [这里](https://blog.ifmvo.cn/2017/04/14/package-topbarbaseactivity-by-toolbar/)
+详细介绍请点 [这里](https://blog.ifmvo.cn/2017/04/14/package-topbarbaseactivity-by-toolbar/)
 
 执行命令将项目下载到本地
 
@@ -11,7 +11,7 @@ git clone https://github.com/ifmvo/TopBarBaseActivity.git
 
 1. 根目录/gradle/wrapper/gradle-wrapper.properties
 
-gradle-2.14.1-all.zip  ->  gradle-xxx.zip (你电脑中存在的 gradle 版本)
+gradle-2.14.1-all.zip  ->  gradle-xxx.zip (改成你电脑中存在的 gradle 版本)
 
 2. 根目录/build.gradle
 
