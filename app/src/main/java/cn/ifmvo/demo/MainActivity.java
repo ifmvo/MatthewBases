@@ -1,10 +1,12 @@
-package cn.ifmvo.topbar;
+package cn.ifmvo.demo;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
+import cn.ifmvo.bases.R;
+import cn.ifmvo.bases.TopBarBaseActivity;
 
 public class MainActivity extends TopBarBaseActivity {
 
@@ -37,8 +39,8 @@ public class MainActivity extends TopBarBaseActivity {
             }
         });
 
-
-        txt.setText("bind成功了");
+        //测试 ButterKnife 使用
+        txt.setText("陈序员");
 
 //        setTopRightButton("陈序员", new OnClickListener() {
 //            @Override
