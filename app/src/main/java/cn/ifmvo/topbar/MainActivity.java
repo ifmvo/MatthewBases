@@ -1,9 +1,15 @@
 package cn.ifmvo.topbar;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+
 public class MainActivity extends TopBarBaseActivity {
+
+    @BindView(R.id.txt)
+    TextView txt;
 
     @Override
     protected int getContentView() {
@@ -30,6 +36,9 @@ public class MainActivity extends TopBarBaseActivity {
                 Toast.makeText(MainActivity.this, "点击了右上角按钮！", Toast.LENGTH_LONG).show();
             }
         });
+
+
+        txt.setText("bind成功了");
 
 //        setTopRightButton("陈序员", new OnClickListener() {
 //            @Override

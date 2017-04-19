@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Matthew_Chen on 2017/4/14.
  */
@@ -44,6 +46,9 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
 
         //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
         LayoutInflater.from(TopBarBaseActivity.this).inflate(getContentView(), viewContent);
+
+        ButterKnife.bind(TopBarBaseActivity.this, viewContent);
+
         init(savedInstanceState);
 
     }
