@@ -10,8 +10,6 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import butterknife.ButterKnife;
-
 /**
  * Created by Matthew_Chen on 2017/4/14.
  */
@@ -21,6 +19,7 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
     Toolbar toolbar;
     FrameLayout viewContent;
     TextView tvTitle;
+
     OnClickListener onClickListenerTopLeft;
     OnClickListener onClickListenerTopRight;
 
@@ -39,15 +38,12 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         viewContent = (FrameLayout) findViewById(R.id.viewContent);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
+        //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
+        LayoutInflater.from(this).inflate(getContentView(), viewContent);
 
         //初始化设置 Toolbar
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
-        LayoutInflater.from(TopBarBaseActivity.this).inflate(getContentView(), viewContent);
-
-        ButterKnife.bind(TopBarBaseActivity.this, viewContent);
 
         init(savedInstanceState);
 

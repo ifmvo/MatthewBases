@@ -1,52 +1,42 @@
 package cn.ifmvo.demo;
 
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import butterknife.BindView;
 import cn.ifmvo.bases.R;
-import cn.ifmvo.bases.TopBarBaseActivity;
 
-public class MainActivity extends TopBarBaseActivity {
+/**
+ * Created by 陈序员 on 2017/4/20.
+ * Email: Matthew_Chen_1994@163.com
+ * Blog: https://blog.ifmvo.cn
+ */
 
-    @BindView(R.id.txt)
-    TextView txt;
+public class MainActivity extends ListActivity {
+
+    private String[] texts = new String[]{
+            TestTopBarBaseActivity.class.getSimpleName(),
+            TestRecyclerViewBaseActivity.class.getSimpleName()
+    };
+
+    private Class[] activityClasses = new Class[]{
+        TestTopBarBaseActivity.class,
+        TestRecyclerViewBaseActivity.class
+    };
 
     @Override
-    protected int getContentView() {
-        return R.layout.activity_main;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setListAdapter(new ArrayAdapter<>(this, R.layout.list_item_main, texts));
     }
 
     @Override
-    protected void init(Bundle savedInstanceState) {
-        setTitle("陈序员");
-
-        // 因为左上角的按钮 返回 功能用的比较多，所以可以重载一个方法。
-        setTopLeftButton();
-
-        setTopLeftButton(R.drawable.ic_return_white_24dp, new OnClickListener() {
-            @Override
-            public void onClick() {
-                Toast.makeText(MainActivity.this, "陈序员点击了左上角按钮！", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        setTopRightButton("Button", R.drawable.ic_mine_white_24dp, new OnClickListener() {
-            @Override
-            public void onClick() {
-                Toast.makeText(MainActivity.this, "点击了右上角按钮！", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        //测试 ButterKnife 使用
-        txt.setText("陈序员");
-
-//        setTopRightButton("陈序员", new OnClickListener() {
-//            @Override
-//            public void onClick() {
-//
-//            }
-//        });
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        startActivity(new Intent(this, activityClasses[position]));
     }
 }
