@@ -5,7 +5,7 @@
 执行命令将项目下载到本地
 
 ```
-git clone https://github.com/ifmvo/TopBarBaseActivity.git
+git clone https://github.com/ifmvo/MatthewBases.git
 ```
 为了能够快速的构建并运行项目，你可以修改文件
 
