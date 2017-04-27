@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import butterknife.BindView;
 import cn.ifmvo.bases.R;
 import cn.ifmvo.bases.TopBarBaseActivity;
 
 public class MainActivity extends TopBarBaseActivity {
 
-    @BindView(R.id.txt)
     TextView txt;
 
     @Override
@@ -39,7 +37,7 @@ public class MainActivity extends TopBarBaseActivity {
             }
         });
 
-        //测试 ButterKnife 使用
+        txt = (TextView) findViewById(R.id.txt);
         txt.setText("陈序员");
 
 //        setTopRightButton("陈序员", new OnClickListener() {
