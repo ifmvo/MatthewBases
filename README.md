@@ -1,6 +1,6 @@
-# Android 快速开发（一），封装一个 TopBarBaseActivity
+# MatthewBases
 
-详细介绍请点 [这里](https://blog.ifmvo.cn/2017/04/14/package-topbarbaseactivity-by-toolbar/)
+### [Android 快速开发（一），封装一个 TopBarBaseActivity](https://blog.ifmvo.cn/2017/04/14/package-topbarbaseactivity-by-toolbar/)
 
 执行命令将项目下载到本地
 
