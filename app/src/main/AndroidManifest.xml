@@ -20,9 +20,6 @@
             android:name="cn.ifmvo.demo.TestTopBarBaseActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name="cn.ifmvo.demo.TestRecyclerViewBaseActivity"
-            android:screenOrientation="portrait"/>
-
         <activity android:name="cn.ifmvo.demo.TestBottomTabBaseActivity"
             android:screenOrientation="portrait"/>
 

@@ -20,13 +20,11 @@ public class MainActivity extends ListActivity {
 
     private String[] texts = new String[]{
             TestTopBarBaseActivity.class.getSimpleName(),
-            TestRecyclerViewBaseActivity.class.getSimpleName(),
             TestBottomTabBaseActivity.class.getSimpleName()
     };
 
     private Class[] activityClasses = new Class[]{
         TestTopBarBaseActivity.class,
-        TestRecyclerViewBaseActivity.class,
         TestBottomTabBaseActivity.class
     };
 
