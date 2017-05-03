@@ -38,10 +38,10 @@ public class TestBottomTabBaseActivity extends BottomTabBaseActivity {
     @Override
     protected List<Fragment> getFragments() {
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new TabFragment());
-        fragments.add(new TabFragment());
-        fragments.add(new TabFragment());
-        fragments.add(new TabFragment());
+        fragments.add(new TabFragment1());
+        fragments.add(new TabFragment2());
+        fragments.add(new TabFragment3());
+        fragments.add(new TabFragment4());
         return fragments;
     }
 
