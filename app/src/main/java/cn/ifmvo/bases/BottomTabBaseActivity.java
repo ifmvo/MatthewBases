@@ -46,7 +46,11 @@ public abstract class BottomTabBaseActivity extends AppCompatActivity {
 
         viewPager.setAdapter(adapter);
 
-        bottomTabView.setTabItemViews(getTabViews());
+        if (getCenterView() == null){
+            bottomTabView.setTabItemViews(getTabViews());
+        }else {
+            bottomTabView.setTabItemViews(getTabViews(), getCenterView());
+        }
 
         bottomTabView.setOnTabItemSelectListener(new BottomTabView.OnTabItemSelectListener() {
             @Override

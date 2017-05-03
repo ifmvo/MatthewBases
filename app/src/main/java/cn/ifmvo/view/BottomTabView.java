@@ -47,12 +47,19 @@ public class BottomTabView extends LinearLayout {
     }
 
     /**
-     * 设置
+     * 设置 Tab Item View
      */
-    public void setTabItemViews(final List<TabItemView> tabItemViews){
+    public void setTabItemViews(List<TabItemView> tabItemViews){
+        setTabItemViews(tabItemViews, null);
+    }
+
+    /**
+     * 设置 Tab Item View
+     */
+    public void setTabItemViews(List<TabItemView> tabItemViews, View centerView){
 
         if (this.tabItemViews != null){
-            throw new RuntimeException("setTabItemViews 不能重复设置！");
+            throw new RuntimeException("不能重复设置！");
         }
 
         if (tabItemViews == null || tabItemViews.size() < 2){
@@ -60,11 +67,12 @@ public class BottomTabView extends LinearLayout {
         }
 
         this.tabItemViews = tabItemViews;
-
-        /**
-         * 初始化
-         */
         for (int i=0; i<tabItemViews.size(); i++) {
+
+            if (centerView != null && i == tabItemViews.size() / 2){
+                this.addView(centerView);
+            }
+
             final TabItemView tabItemView = tabItemViews.get(i);
 
             this.addView(tabItemView);
@@ -197,6 +205,9 @@ public class BottomTabView extends LinearLayout {
             LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             layoutParams.weight = 1;
             view.setLayoutParams(layoutParams);
+
+            tvTitle.setText(title);
+
         }
 
         /**

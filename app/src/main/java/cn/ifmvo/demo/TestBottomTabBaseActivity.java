@@ -1,6 +1,10 @@
 package cn.ifmvo.demo;
 
 import android.support.v4.app.Fragment;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +24,13 @@ public class TestBottomTabBaseActivity extends BottomTabBaseActivity {
     @Override
     protected List<BottomTabView.TabItemView> getTabViews() {
         List<BottomTabView.TabItemView> tabItemViews = new ArrayList<>();
-        tabItemViews.add(new BottomTabView.TabItemView(this, "123", R.color.colorPrimary,
+        tabItemViews.add(new BottomTabView.TabItemView(this, "标题1", R.color.colorPrimary,
                 R.color.colorAccent, R.mipmap.ic_launcher, R.mipmap.ic_launcher_round));
-        tabItemViews.add(new BottomTabView.TabItemView(this, "456", R.color.colorPrimary,
+        tabItemViews.add(new BottomTabView.TabItemView(this, "标题2", R.color.colorPrimary,
                 R.color.colorAccent, R.mipmap.ic_launcher, R.mipmap.ic_launcher_round));
-        tabItemViews.add(new BottomTabView.TabItemView(this, "789", R.color.colorPrimary,
+        tabItemViews.add(new BottomTabView.TabItemView(this, "标题3", R.color.colorPrimary,
                 R.color.colorAccent, R.mipmap.ic_launcher, R.mipmap.ic_launcher_round));
-        tabItemViews.add(new BottomTabView.TabItemView(this, "000", R.color.colorPrimary,
+        tabItemViews.add(new BottomTabView.TabItemView(this, "标题4", R.color.colorPrimary,
                 R.color.colorAccent, R.mipmap.ic_launcher, R.mipmap.ic_launcher_round));
         return tabItemViews;
     }
@@ -41,4 +45,21 @@ public class TestBottomTabBaseActivity extends BottomTabBaseActivity {
         return fragments;
     }
 
+    @Override
+    protected View getCenterView() {
+        ImageView centerView = new ImageView(this);
+        centerView.setImageResource(R.mipmap.ic_launcher_round);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(200, 200);
+        layoutParams.leftMargin = 60;
+        layoutParams.rightMargin = 60;
+        layoutParams.bottomMargin = 0;
+        centerView.setLayoutParams(layoutParams);
+        centerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(TestBottomTabBaseActivity.this, "centerView 点击了", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return centerView;
+    }
 }

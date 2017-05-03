@@ -17,7 +17,7 @@ classpath 'com.android.tools.build:gradle:X.X.X' (gradle 版本对应的 gradle 
 
 这样你就不用长时间的等待 AndroidStudio 下载其他版本的 Gradle 了。
 
-## 使用方法
+## 详细介绍
 
 ### [Android 快速开发（一），封装一个 TopBarBaseActivity](https://blog.ifmvo.cn/2017/04/14/package-topbarbaseactivity-by-toolbar/)
 
