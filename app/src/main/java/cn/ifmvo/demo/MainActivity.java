@@ -20,12 +20,14 @@ public class MainActivity extends ListActivity {
 
     private String[] texts = new String[]{
             TestTopBarBaseActivity.class.getSimpleName(),
-            TestRecyclerViewBaseActivity.class.getSimpleName()
+            TestRecyclerViewBaseActivity.class.getSimpleName(),
+            TestBottomTabBaseActivity.class.getSimpleName()
     };
 
     private Class[] activityClasses = new Class[]{
         TestTopBarBaseActivity.class,
-        TestRecyclerViewBaseActivity.class
+        TestRecyclerViewBaseActivity.class,
+        TestBottomTabBaseActivity.class
     };
 
     @Override
@@ -38,5 +40,6 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         startActivity(new Intent(this, activityClasses[position]));
+
     }
 }
