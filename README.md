@@ -21,3 +21,4 @@ classpath 'com.android.tools.build:gradle:X.X.X' (gradle 版本对应的 gradle 
 
 ### [Android 快速开发（一），封装一个 TopBarBaseActivity](https://blog.ifmvo.cn/2017/04/14/package-topbarbaseactivity-by-toolbar/)
 
+### [Android 快速开发（二），封装一个 BottomTabBaseActivity](https://blog.ifmvo.cn/2017/05/03/package-bottomtabbaseactivity/)
