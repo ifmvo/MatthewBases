@@ -3,6 +3,7 @@ package cn.ifmvo.view;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +45,36 @@ public class BottomTabView extends LinearLayout {
 
     public BottomTabView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    /**
+     * 连接 Viewpager
+     * @param viewPager　
+     */
+    public void setUpWithViewPager(final ViewPager viewPager){
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                updatePosition(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        setOnTabItemSelectListener(new OnTabItemSelectListener() {
+            @Override
+            public void onTabItemSelect(int position) {
+                viewPager.setCurrentItem(position);
+            }
+        });
     }
 
     /**
@@ -119,11 +150,15 @@ public class BottomTabView extends LinearLayout {
      */
     public void updatePosition(int position){
         if (lastPosition != position){
-            tabItemViews.get(position).setStatus(TabItemView.PRESS);
-            if (lastPosition != -1) {
-                tabItemViews.get(lastPosition).setStatus(TabItemView.DEFAULT);
+            if (tabItemViews != null && tabItemViews.size() != 0){
+                tabItemViews.get(position).setStatus(TabItemView.PRESS);
+                if (lastPosition != -1) {
+                    tabItemViews.get(lastPosition).setStatus(TabItemView.DEFAULT);
+                }
+                lastPosition = position;
+            }else{
+                throw new RuntimeException("please setTabItemViews !");
             }
-            lastPosition = position;
         }
     }
 

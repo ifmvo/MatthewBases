@@ -52,35 +52,8 @@ public abstract class BottomTabBaseActivity extends AppCompatActivity {
             bottomTabView.setTabItemViews(getTabViews(), getCenterView());
         }
 
-        bottomTabView.setOnTabItemSelectListener(new BottomTabView.OnTabItemSelectListener() {
-            @Override
-            public void onTabItemSelect(int position) {
-                viewPager.setCurrentItem(position, true);
-            }
-        });
+        bottomTabView.setUpWithViewPager(viewPager);
 
-        bottomTabView.setOnSecondSelectListener(new BottomTabView.OnSecondSelectListener() {
-            @Override
-            public void onSecondSelect(int position) {
-
-            }
-        });
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                bottomTabView.updatePosition(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
     }
 
     protected abstract List<BottomTabView.TabItemView> getTabViews();
