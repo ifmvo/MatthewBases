@@ -23,4 +23,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:recyclerview-v7:25.3.0'
     compile 'com.android.support:design:25.3.0'
+
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.google.code.gson:gson:2.8.2'
 }
