@@ -20,24 +20,24 @@ public class MainActivity extends ListActivity {
 
     private String[] texts = new String[]{
             TestTopBarBaseActivity.class.getSimpleName(),
-            TestBottomTabBaseActivity.class.getSimpleName()
+            TestBottomTabBaseActivity.class.getSimpleName(),
+            TestRecyclerViewBaseActivity.class.getSimpleName()
     };
 
     private Class[] activityClasses = new Class[]{
         TestTopBarBaseActivity.class,
-        TestBottomTabBaseActivity.class
+        TestBottomTabBaseActivity.class,
+        TestRecyclerViewBaseActivity.class
     };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setListAdapter(new ArrayAdapter<>(this, R.layout.list_item_main, texts));
     }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         startActivity(new Intent(this, activityClasses[position]));
-
     }
 }

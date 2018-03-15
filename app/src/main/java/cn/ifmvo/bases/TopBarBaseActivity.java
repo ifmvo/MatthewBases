@@ -56,7 +56,12 @@ public abstract class TopBarBaseActivity extends AppCompatActivity {
     }
 
     protected void setTopLeftButton(){
-        setTopLeftButton(R.drawable.ic_return_white_24dp, null);
+        setTopLeftButton(R.drawable.ic_return_white_24dp, new OnClickListener() {
+            @Override
+            public void onClick() {
+                finish();
+            }
+        });
     }
 
     protected void setTopLeftButton(int iconResId, OnClickListener onClickListener){
