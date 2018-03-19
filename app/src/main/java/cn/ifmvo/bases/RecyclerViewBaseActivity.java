@@ -3,7 +3,6 @@ package cn.ifmvo.bases;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -25,8 +24,9 @@ public abstract class RecyclerViewBaseActivity<T> extends TopBarBaseActivity {
 
     protected BaseQuickAdapter<T, BaseViewHolder> adapter;
 
-    private RecyclerView rv;
-    private SwipeRefreshLayout srl;
+    protected RecyclerView rv;
+    
+    protected SwipeRefreshLayout srl;
 
     @Override
     protected int getContentView() {
@@ -85,7 +85,6 @@ public abstract class RecyclerViewBaseActivity<T> extends TopBarBaseActivity {
             }
             adapter.loadMoreComplete();
         }
-
     }
 
     protected abstract void initBeforeGetData();
